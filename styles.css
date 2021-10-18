@@ -1,0 +1,11 @@
+body{
+    background-color: #EEEEEE;
+}
+
+.size{
+    height:450px;
+    width:600px;
+}
+.margintop{
+    margin-top: 2rem;
+}
