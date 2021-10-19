@@ -8,10 +8,18 @@ app.get("/",function(req,res){
     fs.readdir(folder,function(err,files){
         if(err) throw err;
         files.forEach((file)=>{
-            const extension = file.split(".").pop();
-            console.log(file);
-            console.log(extension);
-            obj.push({"file/folder":file,"extension":extension});
+            if(file.split(".").length >1){
+                const extension = file.split(".").pop();
+            //console.log(file);
+            //console.log(extension);
+            obj.push({"file":file,"extension":extension});
+            }
+            else
+            {   
+               // console.log(file);
+                obj.push({"folder":file,"extension":"Folder"});
+            }
+            
         })
     res.json(obj)
     })
